@@ -1,7 +1,7 @@
 import { WebpackAsyncRoute } from '@angularclass/webpack-toolkit';
 import { RouterConfig } from '@angular/router';
-import { Home } from './home';
-import { NoContent } from './no-content';
+import { Home } from './pages/home';
+import { NoContent } from './pages/no-content';
 import { DataResolver } from './app.resolver';
 
 export const routes: RouterConfig = [
@@ -28,10 +28,10 @@ export const routes: RouterConfig = [
 
 export const asyncRoutes: AsyncRoutes = {
   // we have to use the alternative syntax for es6-promise-loader to grab the routes
-  'About': require('es6-promise-loader!./about'),
+  'About': require('es6-promise-loader!./pages/about'),
   'Map': require('es6-promise-loader!./pages/map'),
-  'Detail': require('es6-promise-loader!./+detail'),
-  'Index': require('es6-promise-loader!./+detail'), // must be exported with detail/index.ts
+  'Detail': require('es6-promise-loader!./pages/+detail'),
+  'Index': require('es6-promise-loader!./pages/+detail'), // must be exported with detail/index.ts
 };
 
 

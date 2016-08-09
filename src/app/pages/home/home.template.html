@@ -1,0 +1,7 @@
+<card [size]="'small'">
+    <cars-list [cars]="cars"> </cars-list>
+</card>
+
+<card [size]="'large'">
+    <cars-map [cars]="cars" (carClicked)="onCarClicked($event)"></cars-map>
+</card>

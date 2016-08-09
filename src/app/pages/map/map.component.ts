@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
-import {CarsMapComponent} from '../../components/map'
+import {CarsMapComponent} from '../../components/map';
+import {CardComponent} from '../../components/card';
+import {CarsListComponent} from '../../components/cars-list'
 
 @Component({
   selector: 'map',
   styleUrls: [ './map.style.css' ],
   templateUrl: './map.template.html',
-  directives: [CarsMapComponent]
+  directives: [CarsMapComponent, CardComponent, CarsListComponent]
 })
 export class Map {
 
