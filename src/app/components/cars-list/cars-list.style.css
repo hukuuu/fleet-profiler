@@ -1,0 +1,26 @@
+.list-group {
+    height: 100%;
+    display: block;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.list-group-item {
+    padding-bottom: 0px;
+    padding-top: 0px;
+}
+
+.driver {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.location {
+    font-size: 12px;
+    margin-top: 0px;
+    margin-bottom: 5px;
+}
+/*:host {
+    height: 100px;
+    overflow: hidden;
+}*/
