@@ -11,7 +11,6 @@ export class CarsMapComponent {
   @Input('cars') cars: any[];
   @Output() carClicked = new EventEmitter<any>();  
 
-  // maps = [1];
   lat: Number = 42.6949737;
   lng : Number = 23.3353503;
   zoom: Number = 10; 
@@ -25,8 +24,6 @@ export class CarsMapComponent {
         this.zoom = 14;
         this.lat = car.latitude;
         this.lng = car.longitude;
-        // this.maps.pop();
-        // this.maps.push(1);
         console.log(this.zoom);
 
     this.carClicked.emit(car)

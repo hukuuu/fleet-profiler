@@ -17,18 +17,19 @@ import { AppState } from './app.service';
   ],
   templateUrl: './app.component.html'
 })
-export class App {
+export class AppComponent {
   angularclassLogo = 'assets/img/angularclass-avatar.png';
   name = 'FleetProfiler';
   url = 'https://twitter.com/AngularClass';
 
   constructor(
-    public appState: AppState) {
+    // public appState: AppState
+    ) {
 
   }
 
   ngOnInit() {
-    console.log('Initial App State', this.appState.state);
+    // console.log('Initial App State', this.appState.state);
   }
 
   toggleSidebar() {
