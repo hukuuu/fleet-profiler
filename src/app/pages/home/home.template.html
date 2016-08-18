@@ -1,7 +1,17 @@
-<card [size]="'small'">
-    <cars-list [cars]="cars"> </cars-list>
-</card>
 
-<card [size]="'large'">
-    <cars-map [cars]="cars" (carClicked)="onCarClicked($event)"></cars-map>
-</card>
+   <div class="col-md-2">
+    <div class="row">
+        <card [size]="'fullscreen-md-2'" class="cardList">
+            <cars-list [cars]="cars"> </cars-list>
+        </card>
+     <br/>     <br/>
+     <br/>
+     <br/>
+        <card [size]="'fullscreen-md-2'" class="cardList"> 
+            <alerts-list [alerts]="alerts"> </alerts-list>
+        </card>
+    </div>
+   </div>
+    <card [size]="'large'" id="map">
+        <cars-map [cars]="cars" (carClicked)="onCarClicked($event)"></cars-map>
+    </card>
