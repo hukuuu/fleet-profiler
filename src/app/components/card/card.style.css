@@ -1,7 +1,9 @@
-/*.card_content {
-  
-} */
-div.col-md-2 {
-    height: 500px;
+div.col-md-12 {
+    height: 400px;
     overflow: hidden;
+    margin-bottom: 15px;
+}
+
+div.col-md-10 {
+    height: 800px;
 }

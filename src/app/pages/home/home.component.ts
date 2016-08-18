@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef } from '@angular/core';
 
 import { AppState } from '../../app.service';
 import { Title } from './title';
@@ -6,6 +6,7 @@ import { XLarge } from './x-large';
 import {CarsMapComponent} from '../../components/map';
 import {CardComponent} from '../../components/card';
 import {CarsListComponent} from '../../components/cars-list'
+import {AlertsListComponent} from '../../components/alerts-list'
 
 @Component({
   // The selector is what angular internally uses
@@ -19,7 +20,7 @@ import {CarsListComponent} from '../../components/cars-list'
   // We need to tell Angular's compiler which directives are in our template.
   // Doing so will allow Angular to attach our behavior to an element
   directives: [
-    XLarge, CarsMapComponent, CarsListComponent, CardComponent,
+    XLarge, CarsMapComponent, CarsListComponent, CardComponent, AlertsListComponent
   ],
   // We need to tell Angular's compiler which custom pipes are in our template.
   pipes: [],
@@ -28,6 +29,7 @@ import {CarsListComponent} from '../../components/cars-list'
   // Every Angular template is first compiled by the browser before Angular runs it's compiler
   templateUrl: './home.template.html'
 })
+
 export class Home {
   // Set our default values
   localState = { value: '' };
@@ -38,11 +40,35 @@ export class Home {
   }
 
   cars = []
+  alerts = []
+  viewHeight: number;
+  // myDOM: Object;
 
-  constructor(public appState: AppState, public title: Title) {
+  constructor(public appState: AppState, public title: Title, private elementRef:ElementRef) {
   }
 
+findHeight(el: any) {
+  return el.offsetHeight ? el.offsetHeight : this.findHeight(el.parentElement);
+}
+
+getHeight(): number {
+   return this.findHeight(this.elementRef.nativeElement.parentElement);
+}
   ngOnInit() {
+   // console.log(this.elementRef.nativeElement.parentElement);
+    // console.log(this.elementRef.nativeElement.parentElement.getBoundingClientRect().height);
+    //console.log("parentHeight");
+
+ console.log("card parent height after init:");
+     // console.log(this.parentHeight);
+    //   console.log(this.elementRef.nativeElement.parentElement.getBoundingClientRect().height);
+    //   let el = this.elementRef.nativeElement.parentElement.parentElement.parentElement;
+    //   console.log(el);
+    //   console.log(el.parentElement.getBoundingClientRect().height);
+    //   console.log(el.offsetHeight);
+    //   console.log(el.getBoundingClientRect().height);
+
+    // console.log(this.getHeight());
     this.cars = [
       {
         "_id": "57a4838c96360f1ab5048f9b",
@@ -125,6 +151,20 @@ export class Home {
         "longitude": 23.4188918
       }
     ]    // this.title.getData().subscribe(data => this.data = data);
+    this.alerts = [
+    {
+      "title":"Alert 1",
+      "details":"Details 1"
+    },
+    {
+      "title":"Alert 2",
+      "details":"Details 2"
+    },
+    {
+      "title":"Alert 3",
+      "details":"Details"
+    }
+    ]
   }
 
   submitState(value) {

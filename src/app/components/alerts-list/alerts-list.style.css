@@ -9,13 +9,13 @@
     padding-top: 0px;
 }
 
-.driver {
+.title {
     font-size: 16px;
     font-weight: bold;
     margin-top: 5px;
     margin-bottom: 5px;
 }
-.location {
+.details {
     font-size: 12px;
     margin-top: 0px;
     margin-bottom: 5px;

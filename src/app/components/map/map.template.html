@@ -1,3 +1,7 @@
-<sebm-google-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
-    <sebm-google-map-marker *ngFor="let car of cars" [latitude]="car.latitude" [longitude]="car.longitude" [iconUrl]="getImageUrl(car.isActive)" (markerClick)="onMarkerClick(car)"></sebm-google-map-marker>
+<sebm-google-map *ngFor="let map of maps" [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+    <sebm-google-map-marker *ngFor="let car of cars" [latitude]="car.latitude" [longitude]="car.longitude" [iconUrl]="getImageUrl(car.isActive)" (markerClick)="onMarkerClick(car)">
+          <sebm-google-map-info-window [disableAutoPan]="true">
+             {{car.plates}} <br/>  {{car.driver}} 
+       </sebm-google-map-info-window>
+    </sebm-google-map-marker>
 </sebm-google-map>
